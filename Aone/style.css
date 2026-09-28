@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background: black;
+
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+
+.container {
+    width: 90vw;
+    max-width: 700px;
+
+    position: relative;
+}
+
+
+svg {
+    width: 100%;
+    height: auto;
+}
+
+
+/* Hide the actual heart line */
+
+#heartPath {
+    fill: none;
+    stroke: transparent;
+}
+
+
+/* Moving "I love you Aone" text */
+
+.love-text {
+    fill: #ff9dcc;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    filter: drop-shadow(0 0 5px #ff69b4);
+}
+
+
+/* Second moving line */
+
+.second {
+    opacity: 0.65;
+}
+
+
+/* Photos container */
+
+.photos {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    display: flex;
+
+    gap: 12px;
+
+    z-index: 5;
+}
+
+
+/* Photo frames */
+
+.photo-frame {
+    width: 125px;
+    height: 155px;
+
+    padding: 4px;
+
+    background: #ff9dcc;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 0 10px #ff69b4,
+        0 0 25px #ff69b4,
+        0 0 45px rgba(255, 105, 180, 0.5);
+}
+
+
+/* Actual photos */
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 14px;
+
+    display: block;
+}
+
+
+/* Make the photos slightly different angles */
+
+.photo-frame:first-child {
+    transform: rotate(-5deg);
+}
+
+.photo-frame:last-child {
+    transform: rotate(5deg);
+}
+
+
+/* Make the heart glow slightly */
+
+svg {
+    filter: drop-shadow(0 0 3px #ff69b4);
+}
+
+
+/* Phone screen */
+
+@media (max-width: 600px) {
+
+    .love-text {
+        font-size: 13px;
+        letter-spacing: 1px;
+    }
+
+    .photo-frame {
+        width: 95px;
+        height: 120px;
+    }
+
+    .photos {
+        gap: 8px;
+    }
+}
